@@ -3,7 +3,8 @@
 A high-performance web platform built with **TanStack Start**, **React 19**, and **Tailwind CSS v4** for **Ethan Industries** — a premier manufacturer and international exporter of high-precision metal components based in Rajkot, India, with technical representation in Germany.
 
 Repository: [https://github.com/jenisrakholiya97/shopexpo](https://github.com/jenisrakholiya97/shopexpo)  
-Branch: `main`
+Branch: `main`  
+Live Production URL: [https://shopexpo-tan.vercel.app](https://shopexpo-tan.vercel.app)  
 
 ---
 
