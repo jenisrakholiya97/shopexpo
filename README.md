@@ -1,201 +1,78 @@
-Welcome to your new TanStack Start app!
+# Ethan Industries — Precision Engineering & Global Export Portal
 
-# Getting Started
+A high-performance web platform built with **TanStack Start**, **React 19**, and **Tailwind CSS v4** for **Ethan Industries** — a premier manufacturer and international exporter of high-precision metal components based in Rajkot, India, with technical representation in Germany.
 
-To run this application:
+Repository: [https://github.com/jenisrakholiya97/shopexpo](https://github.com/jenisrakholiya97/shopexpo)  
+Branch: `main`
+
+---
+
+## 🚀 Core Features & Capabilities
+
+### 1. Direct Export Products & Manufacturing Scope
+* **Precision Casting Production (0.05 kg – 5,000 kg):** Sand Casting (Resin & Green Sand), Investment Casting (Lost Wax), High-Pressure Die Casting (HPDC), Gravity Die Casting (GDC), and Centrifugal Casting.
+* **Heavy & Precision Forgings (0.05 kg – 4,000 kg):** Closed Die Forging, Open Die Forging, and Seamless Rolled Rings with continuous grain-flow orientation.
+* **Tight-Tolerance CNC Machining (±0.005 mm):** 3, 4 & 5-Axis Milling (VMC/HMC), CNC Turning Centers, Honing, Grinding, and ready-to-assemble sub-assembly integration.
+* **Metallurgical Quality & Certification:** In-house 32-channel optical emission spectrometry, CMM balloon inspection, Charpy impact testing, NDT (UT/MPI/RT), and EN 10204 3.1 & 3.2 inspection certification with 100% heat-number traceability.
+
+### 2. Global Export & Logistics Hub
+* **Deep-Sea Mundra Port Advantage:** Located 280 km from Port Mundra (APSEZ) with direct weekly sailings to major global container hubs (Hamburg, Rotterdam, Antwerp, New York, etc.).
+* **International Incoterms:** Complete turnkey **DDP (Delivered Duty Paid)** door-to-door execution across Europe & USA, alongside CIF, FOB Mundra, and EXW terms.
+* **Seaworthy Packaging:** ISPM-15 certified heat-treated wooden boxes, heavy export crates, and VCI molecular anti-corrosion barrier wrapping with silica desiccants.
+
+### 3. Multilingual System
+* **Live Language Switcher:** Interactive dropdown component supporting 5 languages:
+  - 🇬🇧 English (EN)
+  - 🇩🇪 Deutsch (DE)
+  - 🇫🇷 Français (FR)
+  - 🇪🇸 Español (ES)
+  - 🇮🇹 Italiano (IT)
+* Dynamic context-based translations with localStorage persistence across all page views.
+
+### 4. Interactive Technical RFQ Modal
+* **Full-Featured Inquiry Drawer/Modal:** Allows international buyers to configure technology (Casting/Forging/CNC), material alloys, quantities, destination ports/cities, target currencies (EUR/USD/GBP), packaging standards, and attach technical 2D drawings / 3D CAD models.
+
+---
+
+## 🛠 Tech Stack
+
+* **Framework:** [TanStack Start](https://tanstack.com/start) (Full-stack SSR/SSG with Nitro server adapter)
+* **Routing:** [TanStack Router](https://tanstack.com/router) (Type-safe file-based routing)
+* **UI Library:** [React 19](https://react.dev/)
+* **Styling:** [Tailwind CSS v4](https://tailwindcss.com/) with `@tailwindcss/vite`
+* **Icons:** [Lucide React](https://lucide.dev/)
+* **Build Tool:** [Vite 8](https://vitejs.dev/)
+
+---
+
+## 📦 Getting Started
+
+### Prerequisites
+* Node.js 18+
+* npm or pnpm
+
+### Installation
 
 ```bash
+# Clone the repository
+git clone https://github.com/jenisrakholiya97/shopexpo.git
+
+# Navigate to project directory
+cd shopexpo
+
+# Install dependencies
 npm install
+
+# Start development server
 npm run dev
 ```
 
-# Building For Production
+The app will be accessible at `http://localhost:3000` (or `http://localhost:3001` if port 3000 is occupied).
 
-To build this application for production:
-
-```bash
-npm run build
-```
-
-## Styling
-
-This project uses [Tailwind CSS](https://tailwindcss.com/) for styling.
-
-### Removing Tailwind CSS
-
-If you prefer not to use Tailwind CSS:
-
-1. Remove the demo pages in `src/routes/demo/`
-2. Replace the Tailwind import in `src/styles.css` with your own styles
-3. Remove `tailwindcss()` from the plugins array in `vite.config.ts`
-4. Remove `@tailwindcss/vite` and `tailwindcss` from `package.json`
-
-
-## Deploy with Nitro
-
-This project uses Nitro as a generic server adapter, so it can run on any Node-compatible host.
+### Building for Production
 
 ```bash
 npm run build
-node dist/server/index.mjs
 ```
 
-The build output is a self-contained Node server. To deploy, push the `dist/` directory to your host (Render, Fly.io, your own VPS, etc.) and run the server command above.
-
-For host-specific presets (Vercel, Netlify, Cloudflare, AWS Lambda, etc.) and tuning, see https://v3.nitro.build/deploy.
-
-
-
-## Routing
-
-This project uses [TanStack Router](https://tanstack.com/router) with file-based routing. Routes are managed as files in `src/routes`.
-
-### Adding A Route
-
-To add a new route to your application just add a new file in the `./src/routes` directory.
-
-TanStack will automatically generate the content of the route file for you.
-
-Now that you have two routes you can use a `Link` component to navigate between them.
-
-### Adding Links
-
-To use SPA (Single Page Application) navigation you will need to import the `Link` component from `@tanstack/react-router`.
-
-```tsx
-import { Link } from "@tanstack/react-router";
-```
-
-Then anywhere in your JSX you can use it like so:
-
-```tsx
-<Link to="/about">About</Link>
-```
-
-This will create a link that will navigate to the `/about` route.
-
-More information on the `Link` component can be found in the [Link documentation](https://tanstack.com/router/v1/docs/framework/react/api/router/linkComponent).
-
-### Using A Layout
-
-In the File Based Routing setup the layout is located in `src/routes/__root.tsx`. Anything you add to the root route will appear in all the routes. The route content will appear in the JSX where you render `{children}` in the `shellComponent`.
-
-Here is an example layout that includes a header:
-
-```tsx
-import { HeadContent, Scripts, createRootRoute } from '@tanstack/react-router'
-
-export const Route = createRootRoute({
-  head: () => ({
-    meta: [
-      { charSet: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { title: 'My App' },
-    ],
-  }),
-  shellComponent: ({ children }) => (
-    <html lang="en">
-      <head>
-        <HeadContent />
-      </head>
-      <body>
-        <header>
-          <nav>
-            <Link to="/">Home</Link>
-            <Link to="/about">About</Link>
-          </nav>
-        </header>
-        {children}
-        <Scripts />
-      </body>
-    </html>
-  ),
-})
-```
-
-More information on layouts can be found in the [Layouts documentation](https://tanstack.com/router/latest/docs/framework/react/guide/routing-concepts#layouts).
-
-## Server Functions
-
-TanStack Start provides server functions that allow you to write server-side code that seamlessly integrates with your client components.
-
-```tsx
-import { createServerFn } from '@tanstack/react-start'
-
-const getServerTime = createServerFn({
-  method: 'GET',
-}).handler(async () => {
-  return new Date().toISOString()
-})
-
-// Use in a component
-function MyComponent() {
-  const [time, setTime] = useState('')
-  
-  useEffect(() => {
-    getServerTime().then(setTime)
-  }, [])
-  
-  return <div>Server time: {time}</div>
-}
-```
-
-## API Routes
-
-You can create API routes by using the `server` property in your route definitions:
-
-```tsx
-import { createFileRoute } from '@tanstack/react-router'
-import { json } from '@tanstack/react-start'
-
-export const Route = createFileRoute('/api/hello')({
-  server: {
-    handlers: {
-      GET: () => json({ message: 'Hello, World!' }),
-    },
-  },
-})
-```
-
-## Data Fetching
-
-There are multiple ways to fetch data in your application. You can use TanStack Query to fetch data from a server. But you can also use the `loader` functionality built into TanStack Router to load the data for a route before it's rendered.
-
-For example:
-
-```tsx
-import { createFileRoute } from '@tanstack/react-router'
-
-export const Route = createFileRoute('/people')({
-  loader: async () => {
-    const response = await fetch('https://swapi.dev/api/people')
-    return response.json()
-  },
-  component: PeopleComponent,
-})
-
-function PeopleComponent() {
-  const data = Route.useLoaderData()
-  return (
-    <ul>
-      {data.results.map((person) => (
-        <li key={person.name}>{person.name}</li>
-      ))}
-    </ul>
-  )
-}
-```
-
-Loaders simplify your data fetching logic dramatically. Check out more information in the [Loader documentation](https://tanstack.com/router/latest/docs/framework/react/guide/data-loading#loader-parameters).
-
-
-# Demo files
-
-Files prefixed with `demo` can be safely deleted. They are there to provide a starting point for you to play around with the features you've installed.
-
-
-# Learn More
-
-You can learn more about all of the offerings from TanStack in the [TanStack documentation](https://tanstack.com).
-
-For TanStack Start specific documentation, visit [TanStack Start](https://tanstack.com/start).
+The output bundle is generated into `.output/` ready for deployment on any Node-compatible environment or cloud host.
